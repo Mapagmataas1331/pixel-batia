@@ -29,16 +29,22 @@ for (var i = 0; i < CANVAS_HEIGHT / PIXEL_SIZE; i++) {
     var l = document.createElement("div");
     l.classList.add('line');
     canvas.appendChild(l);
-    for (var j = 0; j <= CANVAS_WIGHT / PIXEL_SIZE; j++) {
+    for (var j = 0; j < CANVAS_WIGHT / PIXEL_SIZE; j++) {
         var p = document.createElement("div");
         p.classList.add('pixel');
         p.id = i + "_" + j;
+        p.setAttribute("onclick", "ap(this.id)");
         l.appendChild(p);
     }
 }
 
+function aboutpixel(id) {
+    alert(id);
+}
+window.ap = aboutpixel;
+
 for (var i = 0; i < CANVAS_HEIGHT / PIXEL_SIZE; i++) {
-    for (var j = 0; j <= CANVAS_WIGHT / PIXEL_SIZE; j++) {
+    for (var j = 0; j < CANVAS_WIGHT / PIXEL_SIZE; j++) {
         p = document.getElementById(i + "_" + j);
         if ((i+1)%2 == 0) {
             if ((j+1) % 2 == 0) {
@@ -55,3 +61,15 @@ for (var i = 0; i < CANVAS_HEIGHT / PIXEL_SIZE; i++) {
         }
     }
 }
+
+// var zoom = 100;
+// canvas.onwheel = function _image__onwheel( e ) {
+//     e.preventDefault();
+//     if (e.deltaY < 0) {
+//         zoom += 10;
+//         document.body.style.zoom = zoom + "%";
+//     } else {
+//         zoom -= 10;
+//         document.body.style.zoom = zoom + "%";
+//     };
+// };

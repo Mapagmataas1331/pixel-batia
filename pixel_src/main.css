@@ -12,4 +12,8 @@
 .pixel {
     width: var(--PIXEL_SIZE);
     aspect-ratio: 1;
+    cursor: pointer;
+}
+.pixel:hover {
+    background-color: #000;
 }
