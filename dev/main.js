@@ -31,6 +31,7 @@ for (var i = 0; i < CANVAS_HEIGHT / PIXEL_SIZE; i++) {
         p.style.top = i * 10 + "px";
         p.style.left = j * 10 + "px";
         p.classList.add('pixel');
+        p.id = i + "_" + j;
         canvas.appendChild(p);
     }
 }
