@@ -25,6 +25,6 @@ canvas.style.height = CANVAS_HEIGHT + "px";
 
 for (var i = 0; i < CANVAS_HEIGHT / PIXEL_SIZE; i++) {
     for (var j = 0; j <= CANVAS_WIGHT / PIXEL_SIZE; j++) {
-        hhh
+        hhh???
     }
 }
