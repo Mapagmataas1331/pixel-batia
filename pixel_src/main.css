@@ -8,7 +8,7 @@
     background-color: aqua;
 }
 .pixel {
-    position: relative;
+    position: absolute;
     width: var(--PIXEL_SIZE);
     aspect-ratio: 1;
 }

@@ -33,5 +33,18 @@ for (var i = 0; i < CANVAS_HEIGHT / PIXEL_SIZE; i++) {
         p.classList.add('pixel');
         p.id = i + "_" + j;
         canvas.appendChild(p);
+        if ((i+1)%2 == 0) {
+            if ((j+1) % 2 == 0) {
+                p.style.backgroundColor = "#fff"
+            } else {
+                p.style.backgroundColor = "#000"
+            }
+        } else {
+            if ((j+1) % 2 == 0) {
+                p.style.backgroundColor = "#000"
+            } else {
+                p.style.backgroundColor = "#fff"
+            }
+        }
     }
 }
