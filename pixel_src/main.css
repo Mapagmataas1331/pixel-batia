@@ -1,0 +1,13 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+#canvas {
+    width: var(--CANVAS_WIGHT);
+    height: var(--CANVAS_HEIGHT);
+    background-color: aqua;
+}
+.pixel {
+    width: var(--PIXEL_SIZE);
+    aspect-ratio: 1;
+}
