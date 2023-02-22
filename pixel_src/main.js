@@ -19,12 +19,14 @@ const CANVAS_HEIGHT = 900;
 const PIXEL_SIZE = 10;
 
 const root = document.querySelector(':root');
-root.style.setProperty('--CANVAS_WIGHT', CANVAS_WIGHT + "px")
-root.style.setProperty('--CANVAS_HEIGHT', CANVAS_HEIGHT + "px")
-root.style.setProperty('--PIXEL_SIZE', PIXEL_SIZE + "px")
+root.style.setProperty('--CANVAS_WIGHT', CANVAS_WIGHT + "px");
+root.style.setProperty('--CANVAS_HEIGHT', CANVAS_HEIGHT + "px");
+root.style.setProperty('--PIXEL_SIZE', PIXEL_SIZE + "px");
+
+const canvas = document.getElementById("canvas");
 
 for (var i = 0; i < CANVAS_HEIGHT / PIXEL_SIZE; i++) {
     for (var j = 0; j <= CANVAS_WIGHT / PIXEL_SIZE; j++) {
-        hhh???
+        ;
     }
 }
