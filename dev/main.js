@@ -43,9 +43,11 @@ function aboutpixel(id) {
 }
 window.ap = aboutpixel;
 
+fun1();
+async function fun1() {
 for (var i = 0; i < CANVAS_HEIGHT / PIXEL_SIZE; i++) {
     for (var j = 0; j < CANVAS_WIGHT / PIXEL_SIZE; j++) {
-        p = document.getElementById(i + "_" + j);
+        var p = document.getElementById(i + "_" + j);
         if ((i+1)%2 == 0) {
             if ((j+1) % 2 == 0) {
                 p.style.backgroundColor = "#f2f2f2"
@@ -60,6 +62,11 @@ for (var i = 0; i < CANVAS_HEIGHT / PIXEL_SIZE; i++) {
             }
         }
     }
+    await sleep(10);
+}}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 // var zoom = 100;
