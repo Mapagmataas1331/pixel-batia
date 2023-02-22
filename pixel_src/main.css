@@ -15,5 +15,6 @@
     cursor: pointer;
 }
 .pixel:hover {
-    background-color: #000;
+    z-index: 1;
+    box-shadow: 0 0 var(--PIXEL_SIZE) #000;
 }
