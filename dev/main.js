@@ -35,15 +35,15 @@ for (var i = 0; i < CANVAS_HEIGHT / PIXEL_SIZE; i++) {
         canvas.appendChild(p);
         if ((i+1)%2 == 0) {
             if ((j+1) % 2 == 0) {
-                p.style.backgroundColor = "#fff"
+                p.style.backgroundColor = "#f2f2f2"
             } else {
-                p.style.backgroundColor = "#000"
+                p.style.backgroundColor = "#a6a6a6"
             }
         } else {
             if ((j+1) % 2 == 0) {
-                p.style.backgroundColor = "#000"
+                p.style.backgroundColor = "#a6a6a6"
             } else {
-                p.style.backgroundColor = "#fff"
+                p.style.backgroundColor = "#f2f2f2"
             }
         }
     }
