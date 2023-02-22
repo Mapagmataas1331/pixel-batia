@@ -27,6 +27,10 @@ const canvas = document.getElementById("canvas");
 
 for (var i = 0; i < CANVAS_HEIGHT / PIXEL_SIZE; i++) {
     for (var j = 0; j <= CANVAS_WIGHT / PIXEL_SIZE; j++) {
-        ;
+        p = document.createElement("div");
+        p.style.top = i * 10 + "px";
+        p.style.left = j * 10 + "px";
+        p.classList.add('pixel');
+        canvas.appendChild(p);
     }
 }
