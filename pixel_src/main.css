@@ -5,10 +5,11 @@
 #canvas {
     width: var(--CANVAS_WIGHT);
     height: var(--CANVAS_HEIGHT);
-    background-color: aqua;
+}
+.line {
+    display: flex;
 }
 .pixel {
-    position: absolute;
     width: var(--PIXEL_SIZE);
     aspect-ratio: 1;
 }

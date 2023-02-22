@@ -26,13 +26,20 @@ root.style.setProperty('--PIXEL_SIZE', PIXEL_SIZE + "px");
 const canvas = document.getElementById("canvas");
 
 for (var i = 0; i < CANVAS_HEIGHT / PIXEL_SIZE; i++) {
+    var l = document.createElement("div");
+    l.classList.add('line');
+    canvas.appendChild(l);
     for (var j = 0; j <= CANVAS_WIGHT / PIXEL_SIZE; j++) {
-        p = document.createElement("div");
-        p.style.top = i * 10 + "px";
-        p.style.left = j * 10 + "px";
+        var p = document.createElement("div");
         p.classList.add('pixel');
         p.id = i + "_" + j;
-        canvas.appendChild(p);
+        l.appendChild(p);
+    }
+}
+
+for (var i = 0; i < CANVAS_HEIGHT / PIXEL_SIZE; i++) {
+    for (var j = 0; j <= CANVAS_WIGHT / PIXEL_SIZE; j++) {
+        p = document.getElementById(i + "_" + j);
         if ((i+1)%2 == 0) {
             if ((j+1) % 2 == 0) {
                 p.style.backgroundColor = "#f2f2f2"
