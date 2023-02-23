@@ -9,7 +9,7 @@ img.onload = function() {
     img.style.display = 'none';
 };
 
-var color = document.getElementById('color');
+var color = document.getElementById('MobileFooter__color');
 
 function pick(event) {
     var x = event.layerX;

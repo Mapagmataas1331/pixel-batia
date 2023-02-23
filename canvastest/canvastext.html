@@ -36,9 +36,33 @@
         width: 90%;
         padding: 5px 10px 5px 26px;
     }
+    .MobileFooter {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 12px;
+        padding-bottom: 12px;
+        position: fixed;
+        box-sizing: border-box;
+        background-color: rgb(150, 150, 150);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 11;
+    }
+    .MobileFooter__color {
+        font-family: Pixel,sans-serif;
+        color: #2c2d2e;
+        font-size: 20px;
+        line-height: 23px;
+        flex-shrink: 0;
+    }
 </style>
 <body>
     <canvas id="drawo" style="float:left" width="828" height="551"></canvas>  
+    <div class="MobileFooter">
+        <div id="MobileFooter__color">0, 0</div>
+    </div>
     <!-- <canvas class="draw" width="2400" height="1159"></canvas> -->
     <div id="color" style="width: 200px; height: 50px; float: left; background: rgb(255, 252, 255);"></div>
     <script src="script.js"></script>
