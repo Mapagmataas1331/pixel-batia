@@ -69,14 +69,14 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// var zoom = 100;
-// canvas.onwheel = function _image__onwheel( e ) {
-//     e.preventDefault();
-//     if (e.deltaY < 0) {
-//         zoom += 10;
-//         document.body.style.zoom = zoom + "%";
-//     } else {
-//         zoom -= 10;
-//         document.body.style.zoom = zoom + "%";
-//     };
-// };
+var zoom = 100;
+canvas.onwheel = function _image__onwheel( e ) {
+    e.preventDefault();
+    if (e.deltaY < 0) {
+        zoom += 10;
+        document.body.style.zoom = zoom + "%";
+    } else {
+        zoom -= 10;
+        document.body.style.zoom = zoom + "%";
+    };
+};
