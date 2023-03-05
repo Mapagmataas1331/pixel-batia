@@ -16,7 +16,12 @@ var ctx = canvas.getContext("2d");
 ctx.canvas.width  = CANVAS_WIGHT;
 ctx.canvas.height = CANVAS_HEIGHT;
 
-canvas.addEventListener('mousedown', function(e) {
+const sItem = document.getElementById("selected_item");
+const pCoords = document.getElementById("coords")
+
+// Запись текущего положения мыши на Canvas'е и Экране,
+// Подсчет отступов учитывая zoom и положение мыши.
+canvas.addEventListener('mousedown', (e) => {
     isDown = true;
     offset = [
         canvas.offsetLeft - e.clientX,
@@ -25,35 +30,51 @@ canvas.addEventListener('mousedown', function(e) {
     cc = {
         x: Math.round(e.layerX / zoom),
         y: Math.round(e.layerY / zoom)
-    }
-    document.getElementById("coords").innerHTML =
-    `selected item: ${Math.ceil(cc.x/10)} ${Math.ceil(cc.y/10)}; 
-    canvas: ${cc.x} ${cc.y}; client: ${e.clientX} ${e.clientY}`;
+    };
+    console.log(`select: ${Math.ceil(cc.x/10)} ${Math.ceil(cc.y/10)};\ncanvas: ${cc.x} ${cc.y};\nclient: ${e.clientX} ${e.clientY}`);
+    pCoords.innerHTML = "Pixel: " + Math.ceil(cc.y/10) + " " + Math.ceil(cc.x/10);
+    sItem.style.left = (mousePosition.x + offset[0] + Math.ceil(cc.x/10) * 10 - 12) + 'px';
+    sItem.style.top  = (mousePosition.y + offset[1] + Math.ceil(cc.y/10) * 10 - 12) + 'px';
 }, true);
 
-document.addEventListener('mouseup', function() {
+document.addEventListener('mouseup', () => {
     isDown = false;
 }, true);
 
-document.addEventListener('mousemove', function(e) {
+// Запись перемещения мыши и перемещение Canvas'а и Select'а.
+document.addEventListener('mousemove', (e) => {
     e.preventDefault();
+    mousePosition = {
+        x: e.clientX,
+        y: e.clientY
+    };
     if (isDown) {
-        mousePosition = {
-            x: e.clientX,
-            y: e.clientY
-        };
         canvas.style.left = (mousePosition.x + offset[0]) + 'px';
         canvas.style.top  = (mousePosition.y + offset[1]) + 'px';
+        sItem.style.left = (mousePosition.x + offset[0] + Math.ceil(cc.x/10) * 10 - 12) + 'px';
+        sItem.style.top  = (mousePosition.y + offset[1] + Math.ceil(cc.y/10) * 10 - 12) + 'px';
     }
 }, true);
 
-canvas.onwheel = function(e) {
+// Zoom Canvas'а и Select'а.
+canvas.onwheel = (e) => {
     e.preventDefault();
     if (e.deltaY < 0) {
         zoom += 0.1;
         canvas.style.zoom = zoom;
+        sItem.style.zoom = zoom;
     } else {
         zoom -= 0.1;
         canvas.style.zoom = zoom;
+        sItem.style.zoom = zoom;
     };
 };
+
+// Сохранение Canvas'а.
+pCoords.onclick = () => {
+    const link = document.createElement('a');
+    link.download = 'canvas.png';
+    link.href = canvas.toDataURL();
+    link.click();
+    link.delete;
+}
