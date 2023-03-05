@@ -1,5 +1,0 @@
-to install: "npm install -g webpack webpack-cli --save-dev"
-
-to pack: "webpack --entry /dev/main.js -o pixel_src"
-
-check packages: "npm list --depth=0" (globaly: "npm list -g --depth=0")
